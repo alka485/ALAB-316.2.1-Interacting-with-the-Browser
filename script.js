@@ -61,10 +61,28 @@ let questions = [
 //selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
 //console.log(start_btn);
-const info_box = document.querySelector("info_box");
-console.log(info_box);
+const info_box = document.querySelector(".info_box");
+//console.log(info_box);
+const exit_btn = info_box.querySelector(".buttons .quit");
+//console.log(exit_btn);
+const continue_btn = document.querySelector(".buttons .restart");
+//console.log(continue_btn);
+const quiz_box = document.querySelector(".quiz_box");
 
 //if startQuiz button clicked
 start_btn.onclick = () =>{
+    console.log("start button");
     info_box.classList.add("activeInfo");
+}
+
+//if exitQuiz button clicked
+exit_btn.onclick = () => {
+    info_box.classList.remove("activeInfo");
+}
+
+//if continue button is clicked
+continue_btn.onclick =() =>{
+    info_box.classList.remove("activeInfo");
+    quiz_box.classList.add("activeQuiz");
+
 }
